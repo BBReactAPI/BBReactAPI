@@ -6,7 +6,7 @@ class List extends Component {
     super();
     this.state = {
     }
-  }
+  }``
   render() {
     return (
       <div className="List__Content">
