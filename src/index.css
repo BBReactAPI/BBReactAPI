@@ -13,7 +13,7 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color:#F4F3EE;
+  background-color:#efecca;
   padding: 0;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -35,7 +35,7 @@ li {
 .pictures {
   margin-bottom: 1rem;
   border-radius:3px;
-  box-shadow: 8px 8px 5px #888888;
+  box-shadow: 5px 5px 3px #888888;
 }
 
 .description {
