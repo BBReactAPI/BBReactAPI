@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-decoration: none;
 }
 
 .App-logo {
@@ -8,10 +9,13 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #002f2f;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: #efecca;
+}
+
+.bbIcon {
 }
 
 .App-intro {
@@ -24,7 +28,49 @@ img {
 }
 
 
+.inputList {
+  margin: 5px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align:center;
+  width: 75%;
+}
+
+input {
+  line-height: 30px;
+  margin: 5px ;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #002f2f;
+  border-radius:3px;
+  background: #efecca;
+  color: #002f2f;
+
+}
+
+.addmeButton {
+  color: #efecca;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #002f2f;
+  width: 50%;
+  text-align:center;
+  margin: 0 auto;
+  background-color: #002f2f;
+
+}
+
+.submitWords {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* USE THE COLORS FROM THIS PALETTE
+ https://color.adobe.com/sandy-stone-beach-ocean-diver-color-theme-15325/?showPublished=true */
