@@ -6,7 +6,7 @@ class List extends Component {
     super();
     this.state = {
     }
-  }
+  }``
   render() {
     return (
       <div className="List__Content">
@@ -15,15 +15,17 @@ class List extends Component {
             return (
               <li key={index}>
                 <p className='name'>{item.name}</p>
-                <span>${item.price}</span>
                 <br />
-                <span>Description: {item.description}</span>
+                <img  className="pictures" role="presentation" src={item.image} />
                 <br />
-                <img role="presentation" src={item.image} />
+                <span className="description">{item.description}</span>
                 <br />
-                Remove item:<i className="icon ion-trash-a" onClick={this.props.onDeleteClick.bind(this, item.id)} key={item.id}></i>
+                <span className="price">${item.price}</span>
+                <br />
+                <i className="icon ion-trash-a" onClick={this.props.onDeleteClick.bind(this, item.id)} key={item.id}></i>
+                <br />
+                <div className="underline"></div>
               </li>
-
             )
           })}
         </ul>
