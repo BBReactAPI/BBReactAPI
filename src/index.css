@@ -7,6 +7,9 @@ body {
 }
 
 .List__Content {
+  display: flex;
+  justify-content: center;
+
 }
 
 ul {
@@ -15,8 +18,7 @@ ul {
   flex-wrap: wrap;
   background-color:#efecca;
   padding: 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  width: 75%;
   line-height: 1rem;
   border-radius: 3px;
   box-shadow: 1px 1px 2px #888888;
@@ -61,4 +63,39 @@ li {
 .underline {
   border-bottom: 1px solid lightgrey;
   margin-top: 2rem;
+}
+
+@media (min-width:650px){
+  .description {
+    display: inline-block;
+    /*outline: 2px solid red;*/
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .name {
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-bottom:0;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    line-height: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color:#efecca;
+    padding: 0;
+    line-height: 1rem;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #888888;
+  }
+
+
 }

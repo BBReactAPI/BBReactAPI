@@ -3,6 +3,7 @@ import logo from './re-sell-logo.png';
 import axios from 'axios';
 import './App.css';
 import List from './newList';
+import './index.css';
 
 class App extends Component {
   constructor(props) {
@@ -109,6 +110,12 @@ class App extends Component {
           inventory={this.state.inventory}
           onDeleteClick={this.onDeleteClick.bind(this)}
         />
+        <div className="App-footer">
+        <p class="bb-words">Data Courtesy of</p>
+        <a href="https://developer.bestbuy.com">
+          <img src="https://developer.bestbuy.com/images/bestbuy-logo.png" className="bbIcon" alt="Best Buy Developer" />
+        </a>
+        </div>
       </div>
     );
   }
