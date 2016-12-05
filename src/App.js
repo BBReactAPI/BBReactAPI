@@ -88,16 +88,16 @@ class App extends Component {
           <h2>Product List API</h2>
         </div>
         <form onSubmit={this.onFormSubmit.bind(this)} className="inputList">
-          Name:<input onChange={this.onChanged.bind(this, 'name')} type='text' value={this.state.name} placeholder='product name'/>
-          Type:<input onChange={this.onChanged.bind(this, 'type')} type='text' value={this.state.type} placeholder='product type'/>
-          Price:<input onChange={this.onChanged.bind(this, 'price')} type='number' min="10000" value={this.state.price} placeholder='price'/>
-          Shipping:<input onChange={this.onChanged.bind(this, 'shipping')} type='number' value={this.state.shipping} placeholder='shipping cost'/>
-          UPC:<input onChange={this.onChanged.bind(this, 'UPC')} type='text' value={this.state.upc} placeholder='product UPC'/>
-          Desc:<input onChange={this.onChanged.bind(this, 'description')} type='text' value={this.state.description} placeholder='description'/>
-          Manufacturer:<input onChange={this.onChanged.bind(this, 'manufacturer')} type='text' value={this.state.manufacturer} placeholder='manufacturer'/>
-          Model:<input onChange={this.onChanged.bind(this, 'model')} type='text' value={this.state.model} placeholder='model'/>
-          URL:<input onChange={this.onChanged.bind(this, 'url')} type='text' value={this.state.url} placeholder='product url'/>
-          Image URL:<input onChange={this.onChanged.bind(this, 'image')} type='text' value={this.state.image} placeholder='image url'/>
+          <p className="submitWords">Name</p><input onChange={this.onChanged.bind(this, 'name')} type='text' value={this.state.name} placeholder='product name'/>
+          <p className="submitWords">Type</p><input onChange={this.onChanged.bind(this, 'type')} type='text' value={this.state.type} placeholder='product type'/>
+          <p className="submitWords">Price</p><input onChange={this.onChanged.bind(this, 'price')} type='number' min="10000" value={this.state.price} placeholder='price'/>
+          <p className="submitWords">Shipping</p><input onChange={this.onChanged.bind(this, 'shipping')} type='number' value={this.state.shipping} placeholder='shipping cost'/>
+          <p className="submitWords">UPC</p><input onChange={this.onChanged.bind(this, 'UPC')} type='text' value={this.state.upc} placeholder='product UPC'/>
+          <p className="submitWords">Description</p><input onChange={this.onChanged.bind(this, 'description')} type='text' value={this.state.description} placeholder='description'/>
+          <p className="submitWords">Manufacturer</p><input onChange={this.onChanged.bind(this, 'manufacturer')} type='text' value={this.state.manufacturer} placeholder='manufacturer'/>
+          <p className="submitWords">Model</p><input onChange={this.onChanged.bind(this, 'model')} type='text' value={this.state.model} placeholder='model'/>
+          <p className="submitWords">URL</p><input onChange={this.onChanged.bind(this, 'url')} type='text' value={this.state.url} placeholder='product url'/>
+          <p className="submitWords">Image URL</p><input onChange={this.onChanged.bind(this, 'image')} type='text' value={this.state.image} placeholder='image url'/>
 
           <button className="addmeButton">Submit</button>
         </form>
