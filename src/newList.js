@@ -16,7 +16,7 @@ class List extends Component {
             return (
               <li key={index}>
                 <p className='name'>{item.name}</p>
-                <span>Price in USD: {item.price}</span>
+                <span>${item.price}</span>
                 <br />
                 <span>Description: {item.description}</span>
                 <br />

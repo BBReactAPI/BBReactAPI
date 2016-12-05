@@ -11,7 +11,6 @@ class App extends Component {
       inventory: this.props.inventory,
       name: '',
       type: '',
-      ID: '' ,
       model: '',
       price: 1000000,
       shipping: 0,
@@ -55,23 +54,25 @@ class App extends Component {
       };
       axios.post('http://localhost:3030/products', newItem).then((added) => {
         axios.get('http://localhost:3030/products?$sort[price]=-1').then((response) => {
-          inventory = response.data.data
+          inventory = response.data.data;
           this.setState({inventory})
         })
       })
     }
-    whenChanged(field, e) {
-      var change = {};
-      change[field] = e.target.value;
-      this.setState(change);
+    onChanged(field, e) {
+      var changed = {};
+      changed[field] = e.target.value;
+      this.setState(changed);
     }
 
   onDeleteClick(id, e) {
-
+    e.preventDefault();
     var confirmed = confirm("Are you sure you want to delete this this for good?")
     if (confirmed === true){
       console.log('http://localhost:3030/products/'+id)
-      axios.delete('http://localhost:3030/products/'+id)
+      axios.delete('http://localhost:3030/products/'+id).then((response) => {
+        this.getApiInfo(e)
+      })
     } else {
       console.log("hi")
     }
@@ -88,17 +89,16 @@ class App extends Component {
           <h2>"BB API of Fun"</h2>
         </div>
         <form onSubmit={this.onFormSubmit.bind(this)}>
-          <input onChange={this.whenChanged.bind(this, 'name')} type='text' value={this.state.name} placeholder='product name'/>
-          <input onChange={this.whenChanged.bind(this, 'type')} type='text' value={this.state.type} placeholder='product type'/>
-          <input onChange={this.whenChanged.bind(this, 'ID')} type='text' value={this.state.id} placeholder='product ID'/>
-          <input onChange={this.whenChanged.bind(this, 'price')} type='number' min="10000" value={this.state.price} placeholder='price'/>
-          <input onChange={this.whenChanged.bind(this, 'shipping')} type='text' value={this.state.shipping} placeholder='shipping cost'/>
-          <input onChange={this.whenChanged.bind(this, 'UPC')} type='text' value={this.state.upc} placeholder='product UPC'/>
-          <input onChange={this.whenChanged.bind(this, 'description')} type='text' value={this.state.description} placeholder='description'/>
-          <input onChange={this.whenChanged.bind(this, 'manufacturer')} type='text' value={this.state.manufacturer} placeholder='manufacturer'/>
-          <input onChange={this.whenChanged.bind(this, 'model')} type='text' value={this.state.model} placeholder='model'/>
-          <input onChange={this.whenChanged.bind(this, 'url')} type='text' value={this.state.url} placeholder='product url'/>
-          <input onChange={this.whenChanged.bind(this, 'image')} type='text' value={this.state.image} placeholder='image url'/>
+          <input onChange={this.onChanged.bind(this, 'name')} type='text' value={this.state.name} placeholder='product name'/>
+          <input onChange={this.onChanged.bind(this, 'type')} type='text' value={this.state.type} placeholder='product type'/>
+          <input onChange={this.onChanged.bind(this, 'price')} type='number' min="10000" value={this.state.price} placeholder='price'/>
+          <input onChange={this.onChanged.bind(this, 'shipping')} type='text' value={this.state.shipping} placeholder='shipping cost'/>
+          <input onChange={this.onChanged.bind(this, 'UPC')} type='text' value={this.state.upc} placeholder='product UPC'/>
+          <input onChange={this.onChanged.bind(this, 'description')} type='text' value={this.state.description} placeholder='description'/>
+          <input onChange={this.onChanged.bind(this, 'manufacturer')} type='text' value={this.state.manufacturer} placeholder='manufacturer'/>
+          <input onChange={this.onChanged.bind(this, 'model')} type='text' value={this.state.model} placeholder='model'/>
+          <input onChange={this.onChanged.bind(this, 'url')} type='text' value={this.state.url} placeholder='product url'/>
+          <input onChange={this.onChanged.bind(this, 'image')} type='text' value={this.state.image} placeholder='image url'/>
 
           <button>Add me!</button>
         </form>
