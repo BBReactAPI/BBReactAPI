@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-decoration: none;
 }
 
 .App-logo {
@@ -8,10 +9,13 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #85D463;
   height: 150px;
   padding: 20px;
   color: white;
+}
+
+.bbIcon {
 }
 
 .App-intro {
@@ -21,6 +25,38 @@
 img {
   max-height: 100px;
   max-width: 100px;
+}
+
+
+.inputList {
+  margin: 5px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align:center;
+  width: 75%;
+}
+
+input {
+  line-height: 30px;
+  margin: 5px ;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #85D463;
+  border-radius:3px;
+
+}
+
+.addmeButton {
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #85D463;
+  width: 50%;
+  text-align:center;
+  margin: 0 auto;
+  background-color: #85D463;
+
 }
 
 

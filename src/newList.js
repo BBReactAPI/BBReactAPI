@@ -21,7 +21,7 @@ class List extends Component {
                 <br />
                 <img role="presentation" src={item.image} />
                 <br />
-                <i className="icon ion-trash-a" onClick={this.props.onDeleteClick.bind(this, item.id)} key={item.id}></i>
+                Remove item:<i className="icon ion-trash-a" onClick={this.props.onDeleteClick.bind(this, item.id)} key={item.id}></i>
               </li>
 
             )
