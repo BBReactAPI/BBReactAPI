@@ -21,8 +21,10 @@ class App extends Component {
       url: ''
       }
     }
-  getApiInfo(e) {
-    e.preventDefault();
+  componentDidMount() {
+    this.getProducts()
+  }
+  getProducts(){
     axios.get('http://localhost:3030/products?$select[]=name&$select[]=id&$select[]=model&$select[]=description&$select[]=image&$select[]=url&$select[]=price&$select[]=shipping&$sort[price]=-1&$limit=12')
     .then((response) => {
       var newInventory = response.data.data.slice(0);
@@ -53,10 +55,7 @@ class App extends Component {
       url: this.state.url
       };
       axios.post('http://localhost:3030/products', newItem).then((added) => {
-        axios.get('http://localhost:3030/products?$sort[price]=-1').then((response) => {
-          inventory = response.data.data;
-          this.setState({inventory})
-        })
+        this.getProducts()
       })
     }
   onChanged(field, e) {
@@ -66,12 +65,11 @@ class App extends Component {
     }
 
   onDeleteClick(id, e) {
-    e.preventDefault();
     var confirmed = confirm("Are you sure you want to delete this this for good?")
     if (confirmed === true){
       console.log('http://localhost:3030/products/'+id)
       axios.delete('http://localhost:3030/products/'+id).then((response) => {
-        this.getApiInfo(e)
+        this.getProducts()
       })
     } else {
       console.log("hi")
@@ -107,7 +105,6 @@ class App extends Component {
         </p>
         <List
           inventory={this.state.inventory}
-          getApiInfo={this.getApiInfo.bind(this)}
           onDeleteClick={this.onDeleteClick.bind(this)}
         />
       </div>
