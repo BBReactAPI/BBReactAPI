@@ -59,7 +59,7 @@ class App extends Component {
         })
       })
     }
-    onChanged(field, e) {
+  onChanged(field, e) {
       var changed = {};
       changed[field] = e.target.value;
       this.setState(changed);
