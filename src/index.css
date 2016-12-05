@@ -39,14 +39,17 @@ li {
 }
 
 .description {
+  display: inline-block;
   /*outline: 2px solid red;*/
   font-size: 12px;
   font-weight: lighter;
+  margin-bottom: 1rem;
 }
 
 .price {
+  display: inline-block;
   font-size: 18px;
-  margin-bottom: 1px;
+  margin-bottom: 1rem;
 }
 
 

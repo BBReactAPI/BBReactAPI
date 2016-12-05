@@ -18,9 +18,9 @@ class List extends Component {
                 <br />
                 <img  className="pictures" role="presentation" src={item.image} />
                 <br />
-                <div className="description">{item.description}</div>
+                <span className="description">{item.description}</span>
                 <br />
-                <div className="price">${item.price}</div>
+                <span className="price">${item.price}</span>
                 <br />
                 <i className="icon ion-trash-a" onClick={this.props.onDeleteClick.bind(this, item.id)} key={item.id}></i>
                 <br />
