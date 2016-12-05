@@ -39,7 +39,7 @@ img {
 
 input {
   line-height: 30px;
-  margin: 5px ;
+  margin: 3px;
   font-size: 16px;
   text-align: center;
   border: 1px solid #002f2f;
@@ -63,7 +63,8 @@ input {
 
 .submitWords {
   font-size: 18px;
-  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
   padding: 0;
 }
 
