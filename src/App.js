@@ -65,14 +65,15 @@ class App extends Component {
     }
 
   onDeleteClick(id, e) {
-    var confirmed = confirm("Are you sure you want to delete this this for good?")
+    var confirmed = confirm("Are you sure you want to delete this for good?")
     if (confirmed === true){
       console.log('http://localhost:3030/products/'+id)
       axios.delete('http://localhost:3030/products/'+id).then((response) => {
         this.getProducts()
       })
+      console.log("Your item has been deleted.")
     } else {
-      console.log("hi")
+      console.log("Your item has not been deleted.")
     }
 
   }
