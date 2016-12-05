@@ -101,8 +101,9 @@ class App extends Component {
 
           <button>Add me!</button>
         </form>
+
         <p className="App-intro">
-          Stuff
+          Results
         </p>
         <List
           inventory={this.state.inventory}

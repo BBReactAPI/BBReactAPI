@@ -1,5 +1,61 @@
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.List__Content {
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color:#F4F3EE;
+  padding: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  line-height: 1rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #888888;
+}
+
+li {
+  list-style: none;
+}
+
+.name {
+  font-size: 18px;
+  font-family: sans-serif;
+  margin-bottom:0;
+}
+
+.pictures {
+  margin-bottom: 1rem;
+  border-radius:3px;
+  box-shadow: 8px 8px 5px #888888;
+}
+
+.description {
+  /*outline: 2px solid red;*/
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.price {
+  font-size: 18px;
+  margin-bottom: 1px;
+}
+
+
+.icon {
+  border-bottom: 1rem;
+  cursor: pointer;
+}
+
+.underline {
+  border-bottom: 1px solid lightgrey;
+  margin-top: 2rem;
 }
