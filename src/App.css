@@ -68,7 +68,23 @@ input {
   border-radius:3px;
   background: #efecca;
   color: #002f2f;
+}
 
+.search {
+  margin-top: 3rem;
+  background-color: #efefef;
+  border: 1px solid lightgrey;
+}
+
+.add-product {
+  margin-top: 1rem;
+  padding: .5rem;
+  border-radius: 3px;
+  border: none;
+  background-color: #efefef;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  color: grey;
 }
 
 .addmeButton {
