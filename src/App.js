@@ -111,7 +111,7 @@ class App extends Component {
           onDeleteClick={this.onDeleteClick.bind(this)}
         />
         <div className="App-footer">
-        <p class="bb-words">Data Courtesy of</p>
+        <p className="bb-words">Data Courtesy of</p>
         <a href="https://developer.bestbuy.com">
           <img src="https://developer.bestbuy.com/images/bestbuy-logo.png" className="bbIcon" alt="Best Buy Developer" />
         </a>
