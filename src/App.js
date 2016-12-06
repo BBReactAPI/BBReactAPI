@@ -13,10 +13,8 @@ class App extends Component {
       name: '',
       type: '',
       model: '',
-      price: 0,
-      shipping: 0,
+      price: '',
       UPC: '',
-      manufacturer: '',
       image: '',
       description: '',
       url: ''
@@ -38,19 +36,15 @@ class App extends Component {
     });
   }
 
-
   onFormSubmit(e) {
     e.preventDefault();
-    let inventory
     let newItem = {
       name: this.state.name,
       type: 'typeHere',
       ID: this.state.id,
       model: this.state.model,
-      price: 0,
-      shipping: 0,
+      price: 100000,
       upc: 'upcHere',
-      manufacturer: this.state.manufacturer,
       image: this.state.image,
       description: this.state.description,
       url: this.state.url
@@ -76,8 +70,30 @@ class App extends Component {
     } else {
       console.log("Your item has not been deleted.")
     }
-
   }
+
+  onNewSearchName(e){
+    this.setState({
+      newItemValue: e.target.value
+    })
+  }
+
+  onSearchSubmit(e) {
+    e.preventDefault();
+    axios.get('http://localhost:3030/products?name[$like]=*' + this.state.newItemValue + '*&$sort[price]=-1&$limit=12')
+    .then((response) => {
+      var newInventory = response.data.data.slice(0);
+      this.setState({
+        inventory: newInventory,
+        newItemValue: ''
+
+      })
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   render() {
     if (this.state.inventory.length === 0) {
       return false
@@ -88,21 +104,21 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Product List API</h2>
         </div>
-        <form onSubmit={this.onFormSubmit.bind(this)} className="inputList">
-          <p className="submitWords">Name</p><input onChange={this.onChanged.bind(this, 'name')} type='text' value={this.state.name} placeholder='product name'/>
-          <p className="submitWords">Type</p><input onChange={this.onChanged.bind(this, 'type')} type='text' value={this.state.type} placeholder='product type'/>
-          <p className="submitWords">Price</p><input onChange={this.onChanged.bind(this, 'price')} type='number' min="10000" value={this.state.price} placeholder='price'/>
-          <p className="submitWords">Shipping</p><input onChange={this.onChanged.bind(this, 'shipping')} type='number' value={this.state.shipping} placeholder='shipping cost'/>
-          <p className="submitWords">UPC</p><input onChange={this.onChanged.bind(this, 'UPC')} type='text' value={this.state.upc} placeholder='product UPC'/>
-          <p className="submitWords">Description</p><input onChange={this.onChanged.bind(this, 'description')} type='text' value={this.state.description} placeholder='description'/>
-          <p className="submitWords">Manufacturer</p><input onChange={this.onChanged.bind(this, 'manufacturer')} type='text' value={this.state.manufacturer} placeholder='manufacturer'/>
-          <p className="submitWords">Model</p><input onChange={this.onChanged.bind(this, 'model')} type='text' value={this.state.model} placeholder='model'/>
-          <p className="submitWords">URL</p><input onChange={this.onChanged.bind(this, 'url')} type='text' value={this.state.url} placeholder='product url'/>
-          <p className="submitWords">Image URL</p><input onChange={this.onChanged.bind(this, 'image')} type='text' value={this.state.image} placeholder='image url'/>
-
-          <button className="addmeButton">Submit</button>
+        <form onSubmit={this.onSearchSubmit.bind(this)}>
+          <input onChange={this.onNewSearchName.bind(this)} value={this.state.newItemValue} placeholder="search for product..." />
         </form>
+          <form onSubmit={this.onFormSubmit.bind(this)} className="inputList">
+            <p className="submitWords">Name</p><input onChange={this.onChanged.bind(this, 'name')} type='text' value={this.state.name} placeholder='product name'/>
+            <p className="submitWords">Type</p><input onChange={this.onChanged.bind(this, 'type')} type='text' value={this.state.type} placeholder='product type'/>
+            <p className="submitWords">Price</p><input onChange={this.onChanged.bind(this, 'price')} type='number' min="10000" value={this.state.price} placeholder='price'/>
+            <p className="submitWords">UPC</p><input onChange={this.onChanged.bind(this, 'UPC')} type='text' value={this.state.upc} placeholder='product UPC'/>
+            <p className="submitWords">Description</p><input onChange={this.onChanged.bind(this, 'description')} type='text' value={this.state.description} placeholder='description'/>
+            <p className="submitWords">Model</p><input onChange={this.onChanged.bind(this, 'model')} type='text' value={this.state.model} placeholder='model'/>
+            <p className="submitWords">URL</p><input onChange={this.onChanged.bind(this, 'url')} type='text' value={this.state.url} placeholder='product url'/>
+            <p className="submitWords">Image URL</p><input onChange={this.onChanged.bind(this, 'image')} type='text' value={this.state.image} placeholder='image url'/>
 
+            <input type="submit" value="Submit" className="addmeButton" />
+          </form>
         <p className="App-intro">
           Results
         </p>
