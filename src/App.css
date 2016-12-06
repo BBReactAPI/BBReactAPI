@@ -45,6 +45,10 @@ img {
   max-width: 100px;
 }
 
+.icon {
+  font-size: 2em;
+  padding: 5px;
+}
 
 .inputList {
   margin: 5px auto;

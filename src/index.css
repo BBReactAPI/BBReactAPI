@@ -4,6 +4,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-size: 16px;
 }
 
 .List__Content {
@@ -16,16 +17,17 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color:#efecca;
   padding: 0;
   width: 75%;
-  line-height: 1rem;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px #888888;
 }
 
 li {
   list-style: none;
+  background-color:#efecca;
+  line-height: 1rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #888888;
+  margin-top: 2rem;
 }
 
 .name {
@@ -90,11 +92,8 @@ li {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color:#efecca;
     padding: 0;
     line-height: 1rem;
-    border-radius: 3px;
-    box-shadow: 1px 1px 2px #888888;
   }
 
 
