@@ -1,4 +1,3 @@
-This project was created using create-react-app.
 
 ###What is it?
 We created this app using React as part of an assignment for The Iron Yard. It was our first with the axios API request elements. We focused on the employer as the market for the app, mainly being used in a warehouse-type environment on mobile or tablet. 
