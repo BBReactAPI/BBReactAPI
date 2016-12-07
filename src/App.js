@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './re-sell-logo.png';
 import axios from 'axios';
+import api from './Api.js'
 import './App.css';
 import List from './newList';
 import './index.css';
@@ -26,7 +27,7 @@ class App extends Component {
     this.getProducts()
   }
   getProducts(){
-    axios.get('http://localhost:3030/products?$select[]=name&$select[]=id&$select[]=model&$select[]=description&$select[]=image&$select[]=url&$select[]=price&$select[]=shipping&$sort[price]=-1&$limit=12')
+    axios.get(api() + '/products')
     .then((response) => {
       var newInventory = response.data.data.slice(0);
       this.setState({
@@ -52,7 +53,7 @@ class App extends Component {
       description: this.state.description,
       url: this.state.url
       };
-      axios.post('http://localhost:3030/products', newItem).then((added) => {
+      axios.post(api() + '/products', newItem).then((added) => {
         this.getProducts()
       })
     }
@@ -65,8 +66,8 @@ class App extends Component {
   onDeleteClick(id, e) {
     var confirmed = confirm("Are you sure you want to delete this for good?")
     if (confirmed === true){
-      console.log('http://localhost:3030/products/'+id)
-      axios.delete('http://localhost:3030/products/'+id).then((response) => {
+      console.log(api() + '/products/'+id)
+      axios.delete(api() + '/products/'+id).then((response) => {
         this.getProducts()
       })
       console.log("Your item has been deleted.")
@@ -83,7 +84,7 @@ class App extends Component {
 
   onSearchSubmit(e) {
     e.preventDefault();
-    axios.get('http://localhost:3030/products?name[$like]=*' + this.state.newItemValue + '*&$sort[price]=-1&$limit=12')
+    axios.get(api() + '/products?name[$like]=*' + this.state.newItemValue + '*&$sort[price]=-1&$limit=12')
     .then((response) => {
       var newInventory = response.data.data.slice(0);
       this.setState({
