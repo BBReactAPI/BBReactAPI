@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -9,17 +10,21 @@
 }
 
 .App-header {
-  background-color: #002f2f;
-  height: 150px;
+  background-color: #003B64;
   padding: 20px;
-  color: #efecca;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-footer {
   display: flex;
-  justify-content: flex-start;
-  background-color: #002f2f;
-  height: 75px;
+  flex-direction: column;
+  background-color:  #003B64;
   color: #efecca;
 }
 
@@ -31,9 +36,6 @@
   font-size: 12px;
   color: lightgrey;
   margin-left: 1rem;
-}
-
-.bbIcon {
 }
 
 .App-intro {
@@ -66,7 +68,7 @@ input {
   text-align: center;
   border: 1px solid #002f2f;
   border-radius:3px;
-  background: #efecca;
+  background: lightgrey;
   color: #002f2f;
 }
 
@@ -74,6 +76,7 @@ input {
   margin-top: 3rem;
   background-color: #efefef;
   border: 1px solid lightgrey;
+  width: 45%;
 }
 
 .add-product {
@@ -84,22 +87,51 @@ input {
   background-color: #efefef;
   cursor: pointer;
   border: 1px solid lightgrey;
-  color: grey;
+  color: black;
+  font-size: 16px;
+  box-shadow: 1px 1px 2px #888888;
 }
 
+.bb-words {
+  margin: 0;
+  margin-top: .3rem;
+}
+
+
 .addmeButton {
-  color: #efecca;
+  color: white;
   font-size: 14px;
   padding: 5px;
   border: 1px solid #002f2f;
-  width: 50%;
+  width: 5rem;
   text-align:center;
   margin: 0 auto;
-  background-color: #002f2f;
+  margin-top: .5rem;
+  background-color: #003B64;
   cursor: pointer;
   border-radius: 3px;
   box-shadow: 1px 1px 2px #888888;
+}
 
+.search-button {
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #002f2f;
+  width: 5rem;
+  text-align:center;
+  margin: 0 auto;
+  margin-top: .5rem;
+  background-color: #003B64;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #888888;
+}
+
+.line {
+  width:7%;
+  margin-top: 1rem;
+  color: lightgrey;
 }
 
 .submitWords {
@@ -108,6 +140,3 @@ input {
   margin-bottom: 0;
   padding: 0;
 }
-
-/* USE THE COLORS FROM THIS PALETTE
- https://color.adobe.com/sandy-stone-beach-ocean-diver-color-theme-15325/?showPublished=true */
